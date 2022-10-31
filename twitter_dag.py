@@ -3,17 +3,19 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
 from twitter_etl import run_twitter_etl
+import pendulum
 
 # initalize args
 default_args = {
     'owner': 'airflow',
     'depends_on_post': False,
-    'start_date': datetime(2022,11,8),
+    'start_date': pendulum.yesterday(),
     'email': ['airflow@example.com'],
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
-    'retry_delay': timedelta(minutes=1)
+    'retry_delay': timedelta(minutes=1),
+    'start_interval': '0 0 * * *'
 }
 
 # initialize DAG

@@ -42,7 +42,7 @@ def run_twitter_etl():
     df = pd.DataFrame(tweet_list)
 
     # save tweet data to file
-    df.to_csv("s3://gabsanti_airflow_bucket/twitter_etl/freisitg_twitter_data.csv")
+    df.to_csv("s3://gabsanti-airflow-bucket/twitter_etl/freisitg_twitter_data.csv")
 
 
 
