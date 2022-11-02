@@ -9,7 +9,7 @@ import pendulum
 default_args = {
     'owner': 'airflow',
     'depends_on_post': False,
-    'start_date': pendulum.yesterday(),
+    'start_date': datetime(2015, 12, 1),
     'email': ['airflow@example.com'],
     'email_on_failure': False,
     'email_on_retry': False,
